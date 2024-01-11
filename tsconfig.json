@@ -22,6 +22,18 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.js", // Changed extension from .d.ts to .d.js
+    "**/*.js", // Include JavaScript files
+    "**/*.jsx", // Include JSX files
+    ".next/types/**/*.js", // Include Next.js TypeScript definition files
+    "app/(pages)/landing/components/footer.js", // Update file extensions to .js
+    "app/(pages)/landing/components/navbar.js", // Update file extensions to .js
+    "app/(pages)/landing/components/premium.js", // Update file extensions to .js
+    "app/(pages)/landing/page.js", // Update file extensions to .js
+    "app/layout.js", // Update file extensions to .js
+    "app/(pages)/landing/components/introduction.js", // Update file extensions to .js
+    "app/page.js" // Update file extensions to .js
+  ],
   "exclude": ["node_modules"]
 }
