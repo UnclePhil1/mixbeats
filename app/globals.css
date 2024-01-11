@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,7 +17,19 @@
   }
 }
 
+body, html{
+  font-family: 'Flow Circular', system-ui !important;
+  /* color: #030c13e8; */
+}
+
 body {
   color: #ffffff;
   background: #000000;
+}
+
+.signInbackDrop{
+  background-image: url('/public/Image/register.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
 }

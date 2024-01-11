@@ -10,7 +10,7 @@ const config = {
         'primary': '#169B45',
         'light': '#ffffff',
         'dark': '#000000',
-        'gray': '#A7A7A7',
+        'brown': '#919496',
       },
     },
   },

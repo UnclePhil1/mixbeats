@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { MdMenu } from 'react-icons/md'
+import { MdArrowRight, MdMenu } from 'react-icons/md'
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -12,24 +12,26 @@ const Navbar = () => {
     }
 
   return (
-    <div className='w-full flex flex-col md:flex-row justify-between items-center py-2 px-4 relative'>
-        <div className='relative w-[200px] h-[100px] p-0 m-0'>
-        </div>
-        <Image src={'/Image/whitelogo.png'} alt='Music Web Player Logo' width={700} height={300} className='w-[200px] h-[200px] absolute md:left-0 -top-[50px] -left-[50px]'/>
-        <nav>
+    <div className='w-full flex flex-col md:flex-row justify-between items-center py-2 px-[10%] relative'>
+       
+        <Image src={'/Image/whitelogosmall.png'} alt='Music Web Player Logo' width={700} height={300} className='w-[70px] h-[70px] float-left mr-[70%] md:mr-0'/>
+        <nav className='flex justify-center'>
             <ul className={`${show ? 'block' : 'hidden md:flex'} flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-5`}>
                 <li>
-                    <Link href={'/notfound'} className='hover:text-gray'>Premium</Link>
+                    <Link href={'/notfound'} className='hover:text-brown font-semibold'>Premium</Link>
                 </li>
                 <li>
-                    <Link href={'/notfound'} className='hover:text-gray'>Support</Link>
+                    <Link href={'/notfound'} className='hover:text-brown font-semibold'>Support</Link>
                 </li>
                 <li>
-                    <Link href={'/notfound'} className='hover:text-gray'>Download</Link>
+                    <Link href={'/notfound'} className='hover:text-brown font-semibold pr-[20px]'>Download</Link>
                 </li>
-                <div className='flex flex-col md:flex-row justify-center items-center gap-10 md:gap-5'>
-                    <Link href={'/signup'} className='hover:text-primary'>Sign Up</Link>
-                    <Link href={'/login'} className='bg-primary hover:bg-white hover:text-primary py-2 px-4 rounded-md'>Log In</Link>
+                <li>
+                    <span className='p-[1px] h-full bg-white'></span>
+                </li>
+                <div className='flex flex-col md:flex-row justify-center items-center px-6 hover:text-primary cursor-pointer'>
+                    <Link href={'/signin'} className="font-semibold">Sign Up</Link>
+                    <MdArrowRight size={30} className="text-white hover:text-primary"/>
                 </div>
             </ul>
             <button onClick={toggleShow}><MdMenu size={30} className="text-white absolute top-10 right-10 block md:hidden"/></button>
