@@ -1,12 +1,12 @@
-import SignIn from '@/app/components/signin'
-import React from 'react'
+import SignIn from '@/app/components/signin';
+import React from 'react';
 
-const signin = ({ providers }) => {
+const Signin = ({ providers }) => {
   return (
     <div>
-        <SignIn providers={providers} />
+      <SignIn providers={providers} />
     </div>
-  )
-}
+  );
+};
 
-export default signin
+export default Signin;

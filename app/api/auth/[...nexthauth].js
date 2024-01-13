@@ -18,7 +18,8 @@ async function refreshAccessToken(token) {
     }
 
   } catch (error) {
-    console.log("Error", error);
+    console.error("Error", error);
+
 
     return {
       ...token,
@@ -31,8 +32,8 @@ export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     SpotifyProvider({
-      clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
-      clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
+      clientId: process.env.SPOTIFY_PUBLIC_CLIENT_ID,
+      clientSecret: process.env.SPOTIFY_PUBLIC_CLIENT_SECRET,
       authorization: LOGIN_URL,
     }),
     // ...add more providers here
@@ -50,7 +51,7 @@ export const authOptions = {
           accountToken: account.access_token,
           refreshToken: account.refresh_token,
           username: account.providerAccountId,
-          accessTokenExpires: account.expires_at * 1000, //handle expiring in millisecs...
+          accessTokenExpires: Date.now() + account.expires_at * 1000, //handle expiring in millisecs...
         };
       }
       //   Return prev token if access_token has not expired

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,21 +5,21 @@ import { MdArrowBackIos } from "react-icons/md";
 import { getProviders, signIn } from "next-auth/react";
 
 const SignIn = ({ providers }) => {
-  const handleSignin = (provider) => {
-    signIn(provider.id, { callbackUrl: "/dashboard" });
-  };
-
+  console.log("Providers:", providers);
   return (
     <div className="flex justify-center items-center w-screen h-screen relative">
-      <div className="z-50 bg-slate-500 w-[300px] h-[300px]">
+      <div className="z-50">
         {providers &&
           Object.values(providers).map((provider) => (
-            <button key={provider.id} onClick={() => handleSignin(provider)}>
+            <button
+              key={provider.id}
+              onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+            >
               Sign in with {provider.name}
             </button>
           ))}
       </div>
-      {/* <Link href="/landing" className="absolute top-10 left-10 z-50">
+      <Link href="/landing" className="absolute top-10 left-10 z-50">
         <MdArrowBackIos size={40} className="text-white hover:text-brown" />
       </Link>
       <div className="w-screen h-screen bg-[#030c13e8] z-10 absolute top-0 left-0"></div>
@@ -40,14 +39,7 @@ const SignIn = ({ providers }) => {
           height={300}
           className={"w-screen h-screen absolute top-0 left-0 object-cover"}
         />
-
-        <button
-          onClick={() => signIn(providers, { callbackUrl: "/dashboard" })}
-          className="w-[300px] text-[16px] font-semibold py-2 px-4 border-2 border-white hover:text-primary shadow-md rounded-full gap-5 flex justify-center items-center hover:bg-slate-800 text-white z-50 visible"
-        >
-          SignIn With Spotify
-        </button>
-      </div> */}
+      </div>
     </div>
   );
 };

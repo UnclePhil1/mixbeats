@@ -78,7 +78,7 @@ const Footer = () => {
           Terms and conditions apply. 1 month free not available for users who
           have already tried Premium.
         </p>
-        <p className="text-brown text-[13px]">@ 2020 MixBeat AB.</p>
+        <p className="text-brown text-[13px]">@Sponsored By Spotify</p>
       </div>
     </div>
   );
