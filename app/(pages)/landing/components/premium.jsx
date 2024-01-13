@@ -4,7 +4,7 @@ import React from "react";
 
 const Premium = () => {
   return (
-    <div className="p-[20px] w-full bg-white flex justify-center items-center flex-col h-auto md:h-[90vh]">
+    <div className="p-[20px] w-full bg-white flex justify-center items-center flex-col h-auto lg:h-[90vh]">
       <h1 className="text-[2.5em] font-bold py-4 text-dark text-center mb-5">
       The power of Premium
       </h1>

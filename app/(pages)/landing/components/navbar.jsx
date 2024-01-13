@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul
           className={`${
             show ? "block" : "hidden md:flex"
-          } flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-5`}
+          } flex  flex-col md:flex-row justify-center items-center gap-10 md:gap-5 fixed md:relative top-[0] left-0 w-screen h-screen md:w-auto md:h-auto md:top-0 md:left-0 bg-dark z-10`}
         >
           <li>
             <Link href={"/notfound"} className="hover:text-brown font-semibold">
@@ -39,12 +39,12 @@ const Navbar = () => {
           <li>
             <Link
               href={"/notfound"}
-              className="hover:text-brown font-semibold pr-[20px]"
+              className="hover:text-brown font-semibold md:pr-[20px]"
             >
               Download
             </Link>
           </li>
-          <li>
+          <li className="hidden md:block">
             <span className="p-[1px] h-full bg-white"></span>
           </li>
           <div className="flex flex-col md:flex-row justify-center items-center px-6 cursor-pointer">
@@ -57,10 +57,10 @@ const Navbar = () => {
             </Link>
           </div>
         </ul>
-        <button onClick={toggleShow}>
+        <button onClick={toggleShow} className="z-50">
           <MdMenu
             size={30}
-            className="text-white absolute top-10 right-10 block md:hidden"
+            className="text-white fixed top-[30px] right-10 block md:hidden"
           />
         </button>
       </nav>
