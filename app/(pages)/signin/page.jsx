@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdArrowBackIos, MdLogin } from "react-icons/md";
+import { MdArrowBackIos } from "react-icons/md";
+import { RiRegisteredLine } from "react-icons/ri";
 
 const SignIn = () => {
   return (
@@ -26,8 +27,8 @@ const SignIn = () => {
           height={300}
           className={"w-screen h-screen absolute top-0 left-0 object-cover"}
         />
-        <button className="w-[300px] text-[16px] font-semibold py-2 px-4 border-2 border-white hover:text-primary shadow-md rounded-full gap-5 z-50 flex justify-center items-center">
-          <MdLogin size={30} className={""} />
+        <button className="w-[300px] text-[16px] font-semibold py-2 px-4 border-2 border-white hover:text-primary shadow-md rounded-full gap-5 z-50 flex justify-center items-center hover:bg-slate-800">
+          <RiRegisteredLine size={30} />
           SignUp with Spotify
         </button>
       </div>
